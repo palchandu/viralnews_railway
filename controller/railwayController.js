@@ -4,7 +4,7 @@ var async = require('async');
 var service = require('../service');
 var train = function ( req, res) {
     // console.log("inside the train api",req);
-        var train_name = req.body.trainName;
+        var train_name = req.params.train_name;
         let trainsPromise=service.getAllTrains(train_name);
         trainsPromise.then(function(result){
             let data = result;

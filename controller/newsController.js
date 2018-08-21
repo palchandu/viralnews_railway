@@ -6,7 +6,8 @@ var topNews=function(req,res){
                 return res.json({message:"No news find",status:400});
             }
             else{
-                return res.json(response);
+                let data=JSON.parse(response.body);
+                return res.json(data);
             }
     });
 }
@@ -26,7 +27,8 @@ var keyWordNews=function(req,res){
             return res.json({message:"No news find",status:400});
         }
         else{
-            return res.json(response);
+            let data=JSON.parse(response.body);
+            return res.json(data);
         }
     })
 }

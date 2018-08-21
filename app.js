@@ -2,6 +2,7 @@ var express=require('express');
 var app=express();
 var bodyParser = require('body-parser');
 var http = require('http');
+var cors=require('cors');
 //===============================================ALL REQUIRE====================================//
 //-----------------------------------------------Router-----------------------------------------//
 var news=require('./routes/news');
@@ -12,7 +13,7 @@ var railway=require('./routes/railway');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser({limit :"50mb"}));
-
+app.use(cors());
 app.use('/news',news);
 app.use('/railway',railway);
 

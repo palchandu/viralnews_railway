@@ -3,7 +3,7 @@ var router = express.Router();
 var rail = require('../controller/railwayController');
 
 
-router.post('/train', rail.train);
+router.get('/train/:train_name', rail.train);
 router.post('/station', rail.stations);
 router.post('/liveStatus',rail.liveTrainStatus);
 router.post('/pnrStatus',rail.pnrStatus);
